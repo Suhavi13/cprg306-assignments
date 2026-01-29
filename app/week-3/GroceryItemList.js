@@ -75,18 +75,18 @@ const item12 = {
 
  return (
     <ul>
-        <GroceryItem {...item1}/>
-        <GroceryItem {...item2}/>
-        <GroceryItem {...item3}/>
-        <GroceryItem {...item4}/>
-        <GroceryItem {...item5}/>
-        <GroceryItem {...item6}/>
-        <GroceryItem {...item7}/>
-        <GroceryItem {...item8}/>
-        <GroceryItem {...item9}/>
-        <GroceryItem {...item10}/>
-        <GroceryItem {...item11}/>
-        <GroceryItem {...item12}/>
+        <GroceryItem {...item1} />
+        <GroceryItem {...item2} />
+        <GroceryItem {...item3} />
+        <GroceryItem {...item4} />
+        <GroceryItem {...item5} />
+        <GroceryItem {...item6} />
+        <GroceryItem {...item7} />
+        <GroceryItem {...item8} />
+        <GroceryItem {...item9} />
+        <GroceryItem {...item10} />
+        <GroceryItem {...item11} />
+        <GroceryItem {...item12} />
     </ul>
  );
 }
