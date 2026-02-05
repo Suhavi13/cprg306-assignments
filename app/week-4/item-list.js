@@ -2,7 +2,7 @@ import Item from './item';
 import items from './items.json';
 export default function ItemList(){
     return(
-        <ul>
+        <ul className="mx-30 my-10 border p-3 rounded-md bg-blue-200">
             {items.map((item) => (
                 <Item
                     key={item.id}
