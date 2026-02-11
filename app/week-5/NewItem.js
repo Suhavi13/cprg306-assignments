@@ -20,7 +20,7 @@ export default function NewItem(){
         setCategory("produce");
     }
     return(
-        <form onSubmit={handleSubmit} className="text-black text-center text-bold text-lg border-black mx-auto p-10 border-3 rounded-md bg-blue-300">
+        <form onSubmit={handleSubmit} className="dark:border-white text-black text-center text-bold text-lg border-black mx-auto p-10 border-3 rounded-md bg-blue-300">
          
             <label className="flex flex-row gap-2">
               Name:

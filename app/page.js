@@ -3,10 +3,10 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main>
-      <h1 className="text-2xl text-center font-bold">CPRG 306: Web Development 2 - Assignments</h1>
+      <h1 className=" text-2xl text-center font-bold">CPRG 306: Web Development 2 - Assignments</h1>
 
       
-        <ul className="mx-30 my-10 border p-3 rounded-md bg-amber-200">
+        <ul className=" dark:text-black mx-30 my-10 border p-3 rounded-md bg-amber-200">
           <li className="mx-10 my-5 border p-3 rounded-md bg-amber-100">
             <Link href="/week-2">Go to Week 2 Assignment</Link>
           </li>
