@@ -1,23 +1,28 @@
 "use client";
+import ItemList from "./item-list";
 import {useState} from "react";
 
-export default function NewItem(){
+export default function NewItem({onAddItem}){
     const [name, setName] = useState("");
     const [quantity, setQuantity] = useState("1");
     const [category, setCategory] = useState("produce");
+    const [items, setItems] = useState("")
 
-    function handleSubmit(event){
-        event.preventDefault();
-        const item={
+    const item={
+            id: crypto.randomUUID(),
             name: name,
             quantity: quantity,
             category: category
         }
-        console.log(item);
-        alert(`Added: ${item.name}, quantity: ${item.quantity}, category: ${item.category}.`);
+    function handleSubmit(event){
+        event.preventDefault();
+        
+        
+        onAddItem(item);
         setName("");
         setQuantity("1");
         setCategory("produce");
+        setItems("");
     }
     return(
         <form onSubmit={handleSubmit} className="dark:border-white text-black text-center text-bold text-lg border-black mx-auto p-10 border-3 rounded-md bg-blue-300">
