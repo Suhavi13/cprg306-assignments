@@ -1,10 +1,11 @@
 "use client";
 import {useState} from "react";
 
-export default function NewItem(){
-    // const [name, setName] = useState("");
-    // const [quantity, setQuantity] = useState("1");
-    // const [category, setCategory] = useState("produce");
+export default function NewItem(onAddItem){
+    const [name, setName] = useState("");
+    const [quantity, setQuantity] = useState("1");
+    const [category, setCategory] = useState("produce");
+    const [items, setItems] = useState("")
 
     function handleSubmit(event){
         event.preventDefault();
@@ -16,9 +17,10 @@ export default function NewItem(){
         }
        
         onAddItem(item);
-        // setName("");
-        // setQuantity("1");
-        // setCategory("produce");
+        setName("");
+        setQuantity("1");
+        setCategory("produce");
+        setItems("");
     }
     return(
         <form onSubmit={handleSubmit} className="dark:border-white text-black text-center text-bold text-lg border-black mx-auto p-10 border-3 rounded-md bg-blue-300">
