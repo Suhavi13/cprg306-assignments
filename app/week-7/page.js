@@ -5,12 +5,13 @@ import itemsData from './items.json';
 import {useState} from "react";
 
 export default function Page(){
-    const [items, setItems] = useState(itemsData);
 
-    function handleAddItem(newItem){
-        setItems([...items, newItem]);
+    const [items, setItems] = useState(itemsData);
+    
+    const handleAddItem = (newItem) => {
+        setItems((prev) => [...prev,  newItem]);
         
-    }
+    };
 
     return(
         <>

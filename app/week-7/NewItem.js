@@ -1,43 +1,47 @@
 "use client";
 import {useState} from "react";
 
-export default function NewItem(onAddItem){
-    const [name, setName] = useState("");
-    const [quantity, setQuantity] = useState("1");
-    const [category, setCategory] = useState("produce");
-    const [items, setItems] = useState("")
+    const initialState = {name: "", quantity: 1, category: "produce"};
+
+export default function NewItem({onAddItem}){
+   
+    const [items, setItem] = useState({
+        name: "",
+        quantity: 1,
+        category: "produce",
+    })
+
+
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+        setItem((prev) => ({ ...prev, [name]: value}));
+    }
+
 
     function handleSubmit(event){
         event.preventDefault();
-        const item={
-            id: crypto.randomUUID(),
-            name: name,
-            quantity: quantity,
-            category: category
-        }
-       
-        onAddItem(item);
-        setName("");
-        setQuantity("1");
-        setCategory("produce");
-        setItems("");
+        const newItem = { ...items, id: crypto.randomUUID() };
+        onAddItem(newItem);
+        setItem(initialState);
+
+
     }
     return(
         <form onSubmit={handleSubmit} className="dark:border-white text-black text-center text-bold text-lg border-black mx-auto p-10 border-3 rounded-md bg-blue-300">
          
             <label className="flex flex-row gap-2">
               Name:
-              <input id="name" type="text" name="Name:"value={name} onChange={(e) => setName(e.target.value)} required = {true} className="bg-blue-50 border-2 border-black p-0.5 w-full rounded-md text-black" />
+              <input id="name" type="text" name="name"value={items.name} onChange={handleChange} required = {true} className="bg-blue-50 border-2 border-black p-0.5 w-full rounded-md text-black" />
 
             </label>   
 
            
             <div className="flex flex-row gap-2 mt-7">
                 Quantity:
-                <input type="number" min="1" max="99" value={quantity} onChange={(e) => setQuantity(e.target.value)}  className="bg-blue-50 border-2 border-black p-0.5 w-full rounded-md text-black" />
+                <input type="number" name="quantity" min="1" max="99" value={items.quantity} onChange={handleChange}  className="bg-blue-50 border-2 border-black p-0.5 w-full rounded-md text-black" />
                 
                 <div>Category:</div> 
-                <select value={category} onChange={(e) => setCategory(e.target.value)} className="bg-blue-50 border-2 border-black p-0.5 w-full rounded-md text-black">
+                <select value={items.category} name="category" onChange={handleChange} className="bg-blue-50 border-2 border-black p-0.5 w-full rounded-md text-black">
                   
                     <option value="produce">Produce</option>
                     <option value="dairy">Dairy</option>
