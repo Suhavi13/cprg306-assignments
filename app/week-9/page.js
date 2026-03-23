@@ -1,6 +1,6 @@
 "use client";
 
-import { useUserAuth } from "../contexts/AuthContext";
+import { useUserAuth } from "../week-9/contexts/AuthContext.js";
 import Link from "next/link";
 
 export default function Home() {
@@ -31,7 +31,7 @@ export default function Home() {
           <p>
             Welcome, {user.displayName} ({user.email})
           </p>
-          <Link href="app\week-9\shopping-list">Go to Shopping List</Link>
+          <Link href="app\week-9\shopping-list\page.js">Go to Shopping List</Link>
           <br />
           <button onClick={handleSignOut}>Log Out</button>
         </div>

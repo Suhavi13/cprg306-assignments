@@ -29,7 +29,7 @@ export default function Home() {
             <Link href="/week-8">Go to Week 8 Assignment</Link>
           </li>
           <li className="mx-10 my-5 border p-3 rounded-md bg-amber-100">
-            <Link href="/week-9">Go to Week 8 Assignment</Link>
+            <Link href="/week-9">Go to Week 9 Assignment</Link>
           </li>
         </ul>
    
