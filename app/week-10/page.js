@@ -40,7 +40,7 @@ export default function Home() {
             <p className="text-neutral-600 text-xs mb-6">{user.email}</p>
 
             <Link
-              href="/week-9/shopping-list"
+              href="/week-10/shopping-list"
               className="flex items-center justify-between w-full px-4 py-3 bg-neutral-800 border border-white rounded-xl text-white text-sm font-medium mb-3"
             >
               My Shopping List
