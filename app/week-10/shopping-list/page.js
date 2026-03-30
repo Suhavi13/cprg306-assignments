@@ -4,7 +4,7 @@ import ItemList from './item-list.js';
 import {useState, useEffect} from "react";
 import MealIdeas from './MealIdeas.js';
 import { addItem, getItems } from '../_services/shopping-list-service.js';
-import { useUserAuth} from '../week-9/contexts/AuthContext.js';
+import { useUserAuth} from '../../week-9/contexts/AuthContext.js';
 
 export default function Page(){
 
