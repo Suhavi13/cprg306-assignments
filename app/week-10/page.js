@@ -1,6 +1,6 @@
 "use client";
 
-import { useUserAuth } from "./contexts/AuthContext.js";
+import { useUserAuth } from "../week-9/contexts/AuthContext.js";
 import Link from "next/link";
 
 export default function Home() {
