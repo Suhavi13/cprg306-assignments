@@ -9,7 +9,7 @@ import { useUserAuth} from '../../week-9/contexts/AuthContext.js';
 export default function Page(){
 
     const { user } = useUserAuth();
-    const [items, setItems] = useState(itemsData);
+    const [items, setItems] = useState([]);
     const [selectedItemName, setSelectedItemName] = useState("");
 
     const loadItems = async () => {
