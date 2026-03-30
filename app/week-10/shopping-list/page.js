@@ -23,11 +23,21 @@ export default function Page(){
         }
     }, [user]);
     
-    const handleAddItem = async (newItem) => {
-        const id = await addItem(user.uid, newItem);
-        setItems((prev) => [...prev,  newItem]);
+    // const handleAddItem = async (newItem) => {
+    //     const id = await addItem(user.uid, newItem);
+    //     setItems((prev) => [...prev,  newItem]);
         
-    };
+    // };
+
+    const handleAddItem = async (newItem) => {
+    console.log("handleAddItem called", newItem);
+    console.log("user:", user);
+    const id = await addItem(user.uid, newItem);
+    console.log("returned id:", id);
+    setItems((prev) => [...prev, { ...newItem, id }]);
+};
+
+    
 
     const handleItemSelect = (item) => {
         const cleanedName = item.name
