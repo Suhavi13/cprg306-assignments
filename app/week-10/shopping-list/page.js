@@ -9,7 +9,6 @@ import { useUserAuth} from '../../week-9/contexts/AuthContext.js';
 export default function Page(){
 
     const { user } = useUserAuth();
-    console.log("user object:", user);
     const [items, setItems] = useState([]);
     const [selectedItemName, setSelectedItemName] = useState("");
 
@@ -24,19 +23,11 @@ export default function Page(){
         }
     }, [user]);
     
-    // const handleAddItem = async (newItem) => {
-    //     const id = await addItem(user.uid, newItem);
-    //     setItems((prev) => [...prev,  newItem]);
-        
-    // };
-
     const handleAddItem = async (newItem) => {
-    console.log("handleAddItem called", newItem);
-    console.log("user:", user);
-    const id = await addItem(user.uid, newItem);
-    console.log("returned id:", id);
-    setItems((prev) => [...prev, { ...newItem, id }]);
-};
+        const id = await addItem(user.uid, newItem);
+        setItems((prev) => [...prev,  newItem]);
+        
+    };
 
     
 
